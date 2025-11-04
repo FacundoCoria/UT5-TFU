@@ -1,0 +1,12 @@
+﻿auth-api-1  | 
+auth-api-1  | > auth-api@1.0.0 start
+auth-api-1  | > node src/index.js
+auth-api-1  | 
+auth-api-1  | {"at":"2025-10-01T02:18:06.942Z","evt":"BOOT","svc":"auth-api"}
+auth-api-1  | auth-api on 3000
+auth-api-1  | {"at":"2025-10-01T02:18:07.178Z","evt":"REQ","rid":"-","method":"POST","path":"/auth/register","auth":"no","body":{"email":"linus+aad6e7@example.com","nombre":"Linus","password":"***"}}
+auth-api-1  | {"at":"2025-10-01T02:18:07.394Z","evt":"RES","rid":"-","method":"POST","path":"/auth/register","status":201,"dur_ms":215}
+auth-api-1  | {"at":"2025-10-01T02:18:07.406Z","evt":"REQ","rid":"-","method":"POST","path":"/auth/login","auth":"no","body":{"password":"***","email":"linus+aad6e7@example.com"}}
+auth-api-1  | {"at":"2025-10-01T02:18:07.541Z","evt":"RES","rid":"-","method":"POST","path":"/auth/login","status":200,"dur_ms":134}
+auth-api-1  | {"at":"2025-10-01T02:18:07.550Z","evt":"REQ","rid":"-","method":"GET","path":"/auth/me","auth":"yes","body":{}}
+auth-api-1  | {"at":"2025-10-01T02:18:07.558Z","evt":"RES","rid":"-","method":"GET","path":"/auth/me","status":200,"dur_ms":7}

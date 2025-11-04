@@ -1,0 +1,8 @@
+﻿proyectos-api-1  | 
+proyectos-api-1  | > proyectos-api@1.0.0 start
+proyectos-api-1  | > node src/index.js
+proyectos-api-1  | 
+proyectos-api-1  | {"at":"2025-10-01T02:18:06.915Z","evt":"BOOT","svc":"proyectos-api"}
+proyectos-api-1  | proyectos-api on 3000
+proyectos-api-1  | {"at":"2025-10-01T02:18:06.955Z","evt":"REQ","rid":"-","method":"GET","path":"/health","auth":"no","body":{}}
+proyectos-api-1  | {"at":"2025-10-01T02:18:06.972Z","evt":"RES","rid":"-","method":"GET","path":"/health","status":200,"dur_ms":17}

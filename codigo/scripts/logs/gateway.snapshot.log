@@ -1,0 +1,36 @@
+﻿gateway-1  | /docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
+gateway-1  | /docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
+gateway-1  | /docker-entrypoint.sh: Launching /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh
+gateway-1  | 10-listen-on-ipv6-by-default.sh: info: IPv6 listen already enabled
+gateway-1  | /docker-entrypoint.sh: Sourcing /docker-entrypoint.d/15-local-resolvers.envsh
+gateway-1  | /docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-templates.sh
+gateway-1  | /docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
+gateway-1  | /docker-entrypoint.sh: Configuration complete; ready for start up
+gateway-1  | 172.20.0.1 - - [01/Oct/2025:02:05:24 +0000] "GET /tareas/health HTTP/1.1" 401 25 "-" "Mozilla/5.0 (Windows NT; Windows NT 10.0; es-UY) WindowsPowerShell/5.1.26100.4768"
+gateway-1  | 2025/10/01 02:08:03 [error] 22#22: *3 connect() failed (113: Host is unreachable) while connecting to upstream, client: 172.20.0.1, server: , request: "GET /tareas/health HTTP/1.1", upstream: "http://172.20.0.6:3000/tareas/health", host: "localhost:8080"
+gateway-1  | 172.20.0.1 - - [01/Oct/2025:02:08:03 +0000] "GET /tareas/health HTTP/1.1" 502 157 "-" "Mozilla/5.0 (Windows NT; Windows NT 10.0; es-UY) WindowsPowerShell/5.1.26100.4768"
+gateway-1  | 172.20.0.1 - - [01/Oct/2025:02:13:45 +0000] "GET /tareas/health HTTP/1.1" 404 152 "-" "Mozilla/5.0 (Windows NT; Windows NT 10.0; es-UY) WindowsPowerShell/5.1.26100.4768"
+gateway-1  | /docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
+gateway-1  | /docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
+gateway-1  | /docker-entrypoint.sh: Launching /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh
+gateway-1  | 10-listen-on-ipv6-by-default.sh: info: IPv6 listen already enabled
+gateway-1  | /docker-entrypoint.sh: Sourcing /docker-entrypoint.d/15-local-resolvers.envsh
+gateway-1  | /docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-templates.sh
+gateway-1  | /docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
+gateway-1  | /docker-entrypoint.sh: Configuration complete; ready for start up
+gateway-1  | 172.20.0.1 - GET /tareas/health HTTP/1.1 "200" upstream=172.20.0.6:3000 uri=/tareas/health host=localhost ua="Mozilla/5.0 (Windows NT; Windows NT 10.0; es-UY) WindowsPowerShell/5.1.26100.4768"
+gateway-1  | 172.20.0.1 - POST /auth/login HTTP/1.1 "200" upstream=172.20.0.4:3000 uri=/auth/login host=localhost ua="Mozilla/5.0 (Windows NT; Windows NT 10.0; es-UY) WindowsPowerShell/5.1.26100.4768"
+gateway-1  | 172.20.0.1 - POST /proyectos/ HTTP/1.1 "201" upstream=172.20.0.5:3000 uri=/proyectos/ host=localhost ua="Mozilla/5.0 (Windows NT; Windows NT 10.0; es-UY) WindowsPowerShell/5.1.26100.4768"
+gateway-1  | 172.20.0.1 - POST /tareas/ HTTP/1.1 "201" upstream=172.20.0.6:3000 uri=/tareas/ host=localhost ua="Mozilla/5.0 (Windows NT; Windows NT 10.0; es-UY) WindowsPowerShell/5.1.26100.4768"
+gateway-1  | 172.20.0.1 - PATCH /tareas/2/estado HTTP/1.1 "200" upstream=172.20.0.6:3000 uri=/tareas/2/estado host=localhost ua="Mozilla/5.0 (Windows NT; Windows NT 10.0; es-UY) WindowsPowerShell/5.1.26100.4768"
+gateway-1  | 172.20.0.1 - GET /tareas/?proyecto_id=4 HTTP/1.1 "200" upstream=172.20.0.6:3000 uri=/tareas/?proyecto_id=4 host=localhost ua="Mozilla/5.0 (Windows NT; Windows NT 10.0; es-UY) WindowsPowerShell/5.1.26100.4768"
+gateway-1  | 172.20.0.1 - GET /health HTTP/1.1 "200" upstream=- uri=/health host=localhost ua="Mozilla/5.0 (Windows NT; Windows NT 10.0; es-UY) WindowsPowerShell/5.1.26100.4768"
+gateway-1  | 2025/10/01 02:18:06 [error] 23#23: *3 connect() failed (111: Connection refused) while connecting to upstream, client: 172.20.0.1, server: , request: "GET /auth/health HTTP/1.1", upstream: "http://172.20.0.4:3000/auth/health", host: "localhost:8080"
+gateway-1  | 172.20.0.1 - GET /auth/health HTTP/1.1 "502" upstream=172.20.0.4:3000 uri=/auth/health host=localhost ua="Mozilla/5.0 (Windows NT; Windows NT 10.0; es-UY) WindowsPowerShell/5.1.26100.4768"
+gateway-1  | 172.20.0.1 - GET /usuarios/health HTTP/1.1 "200" upstream=172.20.0.3:3000 uri=/usuarios/health host=localhost ua="Mozilla/5.0 (Windows NT; Windows NT 10.0; es-UY) WindowsPowerShell/5.1.26100.4768"
+gateway-1  | 172.20.0.1 - GET /proyectos/health HTTP/1.1 "200" upstream=172.20.0.5:3000 uri=/proyectos/health host=localhost ua="Mozilla/5.0 (Windows NT; Windows NT 10.0; es-UY) WindowsPowerShell/5.1.26100.4768"
+gateway-1  | 172.20.0.1 - GET /tareas/health HTTP/1.1 "200" upstream=172.20.0.6:3000 uri=/tareas/health host=localhost ua="Mozilla/5.0 (Windows NT; Windows NT 10.0; es-UY) WindowsPowerShell/5.1.26100.4768"
+gateway-1  | 172.20.0.1 - POST /auth/register HTTP/1.1 "201" upstream=172.20.0.4:3000 uri=/auth/register host=localhost ua="Mozilla/5.0 (Windows NT; Windows NT 10.0; es-UY) WindowsPowerShell/5.1.26100.4768"
+gateway-1  | 172.20.0.1 - POST /auth/login HTTP/1.1 "200" upstream=172.20.0.4:3000 uri=/auth/login host=localhost ua="Mozilla/5.0 (Windows NT; Windows NT 10.0; es-UY) WindowsPowerShell/5.1.26100.4768"
+gateway-1  | 172.20.0.1 - GET /auth/me HTTP/1.1 "200" upstream=172.20.0.4:3000 uri=/auth/me host=localhost ua="Mozilla/5.0 (Windows NT; Windows NT 10.0; es-UY) WindowsPowerShell/5.1.26100.4768"
+gateway-1  | 172.20.0.1 - POST /proyectos/ HTTP/1.1 "404" upstream=172.20.0.5:3000 uri=/proyectos/ host=localhost ua="Mozilla/5.0 (Windows NT; Windows NT 10.0; es-UY) WindowsPowerShell/5.1.26100.4768"
