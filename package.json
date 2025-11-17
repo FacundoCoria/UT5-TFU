@@ -1,0 +1,23 @@
+{
+  "name": "tfu_ut4",
+  "version": "1.0.0",
+  "description": "Este proyecto implementa una arquitectura de microservicios con varios patrones cloud nativos, usando Node.js, Express, MySQL y Redis. Está compuesto por un API Gateway (nginx) y cuatro servicios: Auth, Usuarios, Proyectos y Tareas, que utilizan dos bases de datos MySQL (`usuarios_db` y `proyectos_db`).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^5.1.0",
+    "express-xml-bodyparser": "^0.4.1",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.15.3",
+    "redis": "^5.9.0",
+    "xml": "^1.0.1"
+  }
+}
