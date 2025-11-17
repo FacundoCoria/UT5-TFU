@@ -1,13 +1,11 @@
-// app.js (monolito)
+// app.js (Monolito)
 import express from "express";
 import dotenv from "dotenv";
 dotenv.config();
 
 import xmlparser from "express-xml-bodyparser"; // SOAP XML parser
 
-// ---------------------------
 // IMPORTS DE LOS MÓDULOS REST
-// ---------------------------
 import authRoutes from "./codigo/auth-api/src/auth.routes.js";
 import usuarioRoutes from "./codigo/usuarios-api/src/user.routes.js";
 import proyectoRoutes from "./codigo/proyectos-api/src/proyectos.routes.js";
@@ -20,33 +18,22 @@ const app = express();
 app.use(express.json());
 app.use(xmlparser());
 
-// ---------------------------
-// HEALTH GLOBAL DEL MONOLITO
-// ---------------------------
+// Health del monolito
 app.get("/health", (req, res) => {
   res.json({ ok: true, service: "monolito" });
 });
 
-// ---------------------------
-// RUTAS REST DEL MONOLITO
-// ---------------------------
-
-// AUTH
+// Rutas rest del monolito
 app.use("/", authRoutes);
 
-// USUARIOS
 app.use("/usuarios", usuarioRoutes);
 
-// PROYECTOS
 app.use("/proyectos", proyectoRoutes);
 app.use("/", proyectoRoutes); // compatibilidad vieja
 
-// TAREAS
 app.use("/tareas", tareasRoutes);
 
-// ---------------------------
-// ENDPOINT SOAP - GET USUARIO POR ID
-// ---------------------------
+// Endpoint SOAP - GET USUARIO por id
 app.post("/soap/usuarios", async (req, res) => {
   try {
     console.log("SOAP BODY:", JSON.stringify(req.body, null, 2));
@@ -68,9 +55,7 @@ app.post("/soap/usuarios", async (req, res) => {
       return res.send(xmlError);
     }
 
-    // ---------------------------
-    // CONSULTA REAL A LA BASE DE DATOS
-    // ---------------------------
+    // Consulta a DB
     const [rows] = await pool.query(
       "SELECT id, nombre, email FROM usuarios WHERE id = ?",
       [userId]
@@ -126,10 +111,16 @@ app.post("/soap/usuarios", async (req, res) => {
   }
 });
 
-// ---------------------------
-// INICIAR SERVIDOR
-// ---------------------------
+// Iniciar servidor
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () =>
   console.log(`Monolito levantado en puerto ${PORT}`)
 );
+
+// Para correr el codigo:
+// docker compose restart monolito
+// docker compose up --build
+
+// docker exec -it db mysql -u app -p
+// USE proyectos_db
+// SELECT * FROM usuarios

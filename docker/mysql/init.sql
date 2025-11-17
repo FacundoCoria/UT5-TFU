@@ -1,23 +1,19 @@
--- =========================================================
 -- Inicialización de BD para monolito
--- Crea esquemas, tablas y datos semilla.
--- =========================================================
+-- Crea esquemas, tablas y datos.
 
--- 1) Esquemas con charset/collation recomendados
+-- Esquemas
 CREATE DATABASE IF NOT EXISTS usuarios_db
   CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 CREATE DATABASE IF NOT EXISTS proyectos_db
   CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
--- 2) Permisos para el usuario 'app'
+-- Permisos para el usuario 'app'
 GRANT ALL PRIVILEGES ON usuarios_db.*  TO 'app'@'%';
 GRANT ALL PRIVILEGES ON proyectos_db.* TO 'app'@'%';
 FLUSH PRIVILEGES;
 
--- =========================================================
--- 3) Esquema USUARIOS
--- =========================================================
+-- Tabla usuarios
 DROP TABLE IF EXISTS usuarios_db.usuarios;
 
 CREATE TABLE usuarios_db.usuarios (
@@ -28,13 +24,11 @@ CREATE TABLE usuarios_db.usuarios (
   creado_en DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Seed: password = "secret"
+-- Inserto datos
 INSERT INTO usuarios_db.usuarios (nombre, email, hash) VALUES
-('Ada Lovelace','ada@example.com','$2a$10$CwTycUXWue0Thq9StjUM0uJ8WcOqKq7n1t42ZT3zh/OEl8rmnE9lO');
+('facu','facu@example.com','$2a$10$CwTycUXWue0Thq9StjUM0uJ8WcOqKq7n1t42ZT3zh/OEl8rmnE9lO');
 
--- =========================================================
--- 4) Esquema PROYECTOS
--- =========================================================
+-- Esquema proyectos
 
 DROP TABLE IF EXISTS proyectos_db.tareas;
 DROP TABLE IF EXISTS proyectos_db.proyectos;
